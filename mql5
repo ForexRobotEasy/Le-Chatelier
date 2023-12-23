@@ -1,0 +1,118 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                              Le Chatelier.mq5  |
+//|                        Copyright 2021, Forex Robot Easy Team     |
+//|                                          https://forexroboteasy.com|
+//+------------------------------------------------------------------+
+#property copyright 'Forex Robot Easy Team'
+#property link      'https://forexroboteasy.com'
+#property version   '1.00'
+
+//+------------------------------------------------------------------+
+//| Global variables                                                  |
+//+------------------------------------------------------------------+
+input double StopLoss = 50.0;      // Stop loss level in pips
+input double TakeProfit = 100.0;   // Take profit level in pips
+input double LotSize = 0.1;        // Lot size for each trade
+input int MagicNumber = 123456;    // Identifier for the EA
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+   // Initialize your code here
+   return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+   // Clean up your code here
+}
+
+//+------------------------------------------------------------------+
+//| Expert tick function                                              |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+   // Analyze price movements during the night session
+   if (IsNightSession())
+   {
+      // Check price movements towards the equilibrium state
+      if (IsMovementTowardsEquilibrium())
+      {
+         // Execute trades based on identified price movements
+         ExecuteTrades();
+      }
+   }
+}
+
+//+------------------------------------------------------------------+
+//| Check if it is night session                                      |
+//+------------------------------------------------------------------+
+bool IsNightSession()
+{
+   // Add your logic to determine if it is night session
+   return true; // Placeholder for demo purposes
+}
+
+//+------------------------------------------------------------------+
+//| Check if there is movement towards equilibrium                    |
+//+------------------------------------------------------------------+
+bool IsMovementTowardsEquilibrium()
+{
+   // Add your logic to determine if there is movement towards equilibrium
+   return true; // Placeholder for demo purposes
+}
+
+//+------------------------------------------------------------------+
+//| Execute trades based on identified price movements               |
+//+------------------------------------------------------------------+
+void ExecuteTrades()
+{
+   // Open trades based on identified price movements
+   if (OpenBuyTrade())
+   {
+      // Set stop loss and take profit levels for the trade
+      SetStopLossTakeProfit();
+   }
+}
+
+//+------------------------------------------------------------------+
+//| Open a buy trade                                                  |
+//+------------------------------------------------------------------+
+bool OpenBuyTrade()
+{
+   // Add your logic to open a buy trade
+   return true; // Placeholder for demo purposes
+}
+
+//+------------------------------------------------------------------+
+//| Set stop loss and take profit levels for the trade                |
+//+------------------------------------------------------------------+
+void SetStopLossTakeProfit()
+{
+   // Add your logic to set stop loss and take profit levels
+   // for the current trade
+}
+
+//+------------------------------------------------------------------+
+//| Monitor and manage open trades                                    |
+//+------------------------------------------------------------------+
+void ManageOpenTrades()
+{
+   // Add your logic to monitor and manage open trades
+}
+
+//+------------------------------------------------------------------+
+//| Calculate and display real-time results of the trading strategy  |
+//+------------------------------------------------------------------+
+void CalculateDisplayResults()
+{
+   // Add your logic to calculate and display real-time results
+}
+
+//+------------------------------------------------------------------+
